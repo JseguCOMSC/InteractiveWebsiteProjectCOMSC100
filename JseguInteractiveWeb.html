@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Interactive Page</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .box {
+      margin: auto;
+      max-width: 300px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 18px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Welcome!</h2>
+    <input type="text" id="name" placeholder="Your name">
+    <button onclick="showMessage()">Click Me</button>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function showMessage() {
+      var name = document.getElementById("name").value;
+      var message = document.getElementById("message");
+      if (name) {
+        message.innerText = "Hello, " + name + "!";
+      } else {
+        message.innerText = "Please enter your name.";
+      }
+    }
+  </script>
+</body>
+</html>
